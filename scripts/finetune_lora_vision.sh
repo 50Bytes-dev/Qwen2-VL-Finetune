@@ -7,7 +7,6 @@
 MODEL_NAME="Qwen/Qwen2.5-VL-7B-Instruct"
 
 export PYTHONPATH=src:$PYTHONPATH
-export CUDA_VISIBLE_DEVICES=0
 
 GLOBAL_BATCH_SIZE=128
 BATCH_PER_DEVICE=4
@@ -28,8 +27,8 @@ deepspeed src/training/train.py \
     --num_lora_modules -1 \
     --deepspeed scripts/zero3.json \
     --model_id $MODEL_NAME \
-    --data_path /root/finetune/dataset.json \
-    --image_folder /root/finetune/data/images \
+    --data_path /root/Qwen2-VL-Finetune/dataset.json \
+    --image_folder /root/Qwen2-VL-Finetune/data/images \
     --remove_unused_columns False \
     --freeze_vision_tower True \
     --freeze_llm True \
@@ -37,7 +36,7 @@ deepspeed src/training/train.py \
     --bf16 True \
     --fp16 False \
     --disable_flash_attn2 False \
-    --output_dir /root/finetune/output/qwen_2.5_lora \
+    --output_dir /root/Qwen2-VL-Finetune/output/qwen_2.5_lora \
     --num_train_epochs 1 \
     --per_device_train_batch_size $BATCH_PER_DEVICE \
     --gradient_accumulation_steps $GRAD_ACCUM_STEPS \
