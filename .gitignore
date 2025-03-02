@@ -169,5 +169,6 @@ tf-logs
 tmp/
 scripts_tmp/
 logs/*.log
+.timetracker
 
 testing.ipynb
