@@ -27,8 +27,8 @@ deepspeed src/training/train.py \
     --num_lora_modules -1 \
     --deepspeed scripts/zero3.json \
     --model_id $MODEL_NAME \
-    --data_path /path/to/your/training/data.json \
-    --image_folder /path/to/your/image/folder \
+    --data_path /root/finetune/dataset.json \
+    --image_folder /root/finetune/data/images \
     --remove_unused_columns False \
     --freeze_vision_tower True \
     --freeze_llm True \
