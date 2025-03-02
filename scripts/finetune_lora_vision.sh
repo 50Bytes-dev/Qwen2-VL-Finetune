@@ -55,4 +55,5 @@ deepspeed src/training/train.py \
     --save_strategy "steps" \
     --save_steps 200 \
     --save_total_limit 10 \
-    --dataloader_num_workers 4
+    --dataloader_num_workers 4 \
+    --include localhost:0
