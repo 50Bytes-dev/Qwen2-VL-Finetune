@@ -67,4 +67,4 @@ if __name__ == "__main__":
     download_folder = "data/images"
 
     # Start downloading images
-    download_images(image_urls, download_folder, max_workers=20)
+    download_images(image_urls, download_folder, max_workers=40)
