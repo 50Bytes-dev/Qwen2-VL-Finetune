@@ -7,12 +7,12 @@
 MODEL_NAME="Qwen/Qwen2.5-VL-7B-Instruct"
 
 export PYTHONPATH=src:$PYTHONPATH
+export CUDA_VISIBLE_DEVICES=0
 
 GLOBAL_BATCH_SIZE=128
 BATCH_PER_DEVICE=4
 NUM_DEVICES=1
 GRAD_ACCUM_STEPS=$((GLOBAL_BATCH_SIZE / (BATCH_PER_DEVICE * NUM_DEVICES)))
-CUDA_VISIBLE_DEVICES=0
 
 # If you want to tune the `embed_token` with LoRA, You need to tune `lm_head` together
 # You should freeze the the merger also, becuase the merger is included in the vision_tower.
@@ -55,5 +55,4 @@ deepspeed src/training/train.py \
     --save_strategy "steps" \
     --save_steps 200 \
     --save_total_limit 10 \
-    --dataloader_num_workers 4 \
-    --include localhost:0
+    --dataloader_num_workers 4
