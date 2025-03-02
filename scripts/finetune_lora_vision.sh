@@ -36,7 +36,7 @@ deepspeed src/training/train.py \
     --bf16 True \
     --fp16 False \
     --disable_flash_attn2 False \
-    --output_dir /root/finetune/output/lora_vision_test \
+    --output_dir /root/finetune/output/qwen_2.5_lora \
     --num_train_epochs 1 \
     --per_device_train_batch_size $BATCH_PER_DEVICE \
     --gradient_accumulation_steps $GRAD_ACCUM_STEPS \
