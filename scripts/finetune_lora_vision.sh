@@ -9,8 +9,8 @@ MODEL_NAME="Qwen/Qwen2.5-VL-7B-Instruct"
 export PYTHONPATH=src:$PYTHONPATH
 
 GLOBAL_BATCH_SIZE=128
-BATCH_PER_DEVICE=4
-NUM_DEVICES=2 # Required 80GB GPU memory per device
+BATCH_PER_DEVICE=3
+NUM_DEVICES=2 # Required 85GB GPU memory per device (A100)
 GRAD_ACCUM_STEPS=$((GLOBAL_BATCH_SIZE / (BATCH_PER_DEVICE * NUM_DEVICES)))
 
 # If you want to tune the `embed_token` with LoRA, You need to tune `lm_head` together
@@ -37,7 +37,7 @@ deepspeed src/training/train.py \
     --fp16 False \
     --disable_flash_attn2 False \
     --output_dir /root/Qwen2-VL-Finetune/output/qwen_2.5_lora \
-    --num_train_epochs 10 \
+    --num_train_epochs 5 \
     --per_device_train_batch_size $BATCH_PER_DEVICE \
     --gradient_accumulation_steps $GRAD_ACCUM_STEPS \
     --image_min_pixels $((256 * 28 * 28)) \
@@ -52,6 +52,6 @@ deepspeed src/training/train.py \
     --report_to tensorboard \
     --lazy_preprocess True \
     --save_strategy "steps" \
-    --save_steps 200 \
+    --save_steps 1 \
     --save_total_limit 10 \
     --dataloader_num_workers 4
