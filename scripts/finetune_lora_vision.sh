@@ -25,7 +25,7 @@ deepspeed src/training/train.py \
     --lora_alpha 64 \
     --lora_dropout 0.05 \
     --num_lora_modules -1 \
-    --deepspeed scripts/zero3_offload.json \
+    --deepspeed scripts/zero3.json \
     --model_id $MODEL_NAME \
     --data_path /root/Qwen2-VL-Finetune/dataset.json \
     --image_folder /root/Qwen2-VL-Finetune/data/images \
