@@ -53,5 +53,5 @@ deepspeed src/training/train.py \
     --lazy_preprocess True \
     --save_strategy "steps" \
     --save_steps 5 \
-    --save_total_limit 5 \
+    --save_total_limit 3 \
     --dataloader_num_workers 4
