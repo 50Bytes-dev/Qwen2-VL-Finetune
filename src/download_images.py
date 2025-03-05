@@ -35,7 +35,7 @@ def download_image(url, folder):
                 error = e
                 break
 
-            time.sleep(1)
+            time.sleep(0.25)
 
     return f"Failed to download {url}: {error}"
 
