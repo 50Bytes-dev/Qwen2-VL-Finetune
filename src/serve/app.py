@@ -170,7 +170,7 @@ def main(args):
         )
 
     demo.queue(api_open=False)
-    demo.launch(show_api=False, share=False, server_name="0.0.0.0", port=8888)
+    demo.launch(show_api=False, share=False, server_name="0.0.0.0", server_port=8888)
 
 
 if __name__ == "__main__":
