@@ -28,6 +28,9 @@ def download_image(url, folder):
         except Exception as e:
             try_count += 1
 
+            if os.path.exists(image_path):
+                os.remove(image_path)
+
             if try_count >= 3:
                 error = e
                 break
