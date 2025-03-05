@@ -17,7 +17,7 @@ def download_image(url, folder):
                 return f"Image already exists: {image_name}"
 
             # Get the image content
-            response = requests.get(url, stream=True)
+            response = requests.get(url, stream=True, timeout=5)
             response.raise_for_status()
 
             # Save the image to the specified folder
