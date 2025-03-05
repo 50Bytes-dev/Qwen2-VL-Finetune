@@ -1,7 +1,10 @@
 #!/bin/bash
 
-MODEL_NAME="Qwen/Qwen2-VL-7B-Instruct"
+# Required 80GB GPU memory
+
+# MODEL_NAME="Qwen/Qwen2-VL-7B-Instruct"
 # MODEL_NAME="Qwen/Qwen2-VL-2B-Instruct"
+MODEL_NAME="Qwen/Qwen2.5-VL-7B-Instruct"
 
 export PYTHONPATH=src:$PYTHONPATH
 
