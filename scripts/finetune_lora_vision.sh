@@ -33,8 +33,9 @@ deepspeed src/training/train.py \
     --freeze_vision_tower True \
     --freeze_llm True \
     --tune_merger False \
-    --bf16 True \
+    --bf16 False \
     --fp16 False \
+    --bits 8 \
     --disable_flash_attn2 False \
     --output_dir /root/Qwen2-VL-Finetune/output/qwen_2.5_lora \
     --num_train_epochs 1 \
