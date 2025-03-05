@@ -9,8 +9,8 @@ MODEL_NAME="Qwen/Qwen2.5-VL-7B-Instruct"
 export PYTHONPATH=src:$PYTHONPATH
 
 GLOBAL_BATCH_SIZE=128
-BATCH_PER_DEVICE=3 # 3 = 64GB / 4 = 81GB (for zero3)
-NUM_DEVICES=2 # Required 85GB GPU memory per device (A100)
+BATCH_PER_DEVICE=3          # 3 = 84GB per device (zero3, A100)
+NUM_DEVICES=2               # Required 85GB GPU memory per device (zero3, A100)
 GRAD_ACCUM_STEPS=$((GLOBAL_BATCH_SIZE / (BATCH_PER_DEVICE * NUM_DEVICES)))
 
 # If you want to tune the `embed_token` with LoRA, You need to tune `lm_head` together
