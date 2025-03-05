@@ -170,5 +170,7 @@ tmp/
 scripts_tmp/
 logs/*.log
 .timetracker
+.python-version
+pyproject.toml
 
 testing.ipynb

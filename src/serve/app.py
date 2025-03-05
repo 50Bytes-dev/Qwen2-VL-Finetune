@@ -148,6 +148,7 @@ def main(args):
         file_types=["image", "video"],
         placeholder="Enter message or upload file...",
         show_label=False,
+        file_count="multiple",
     )
 
     generation_args = {
