@@ -10,7 +10,7 @@ export PYTHONPATH=src:$PYTHONPATH
 
 GLOBAL_BATCH_SIZE=128
 BATCH_PER_DEVICE=1
-NUM_DEVICES=1
+NUM_DEVICES=2 # Required 85GB GPU memory per device
 GRAD_ACCUM_STEPS=$((GLOBAL_BATCH_SIZE / (BATCH_PER_DEVICE * NUM_DEVICES)))
 
 # If you want to tune the `embed_token` with LoRA, You need to tune `lm_head` together
