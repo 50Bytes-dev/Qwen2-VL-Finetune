@@ -51,8 +51,10 @@ def download_images(image_urls, folder, max_workers=10):
         futures = [executor.submit(download_image, url, folder) for url in image_urls]
 
         # Process as tasks complete
+        count = 0
         for future in as_completed(futures):
-            print(future.result())
+            count += 1
+            print(f"[{count}/{len(image_urls)}] " + future.result())
 
 
 if __name__ == "__main__":
