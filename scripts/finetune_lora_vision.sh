@@ -9,7 +9,7 @@ MODEL_NAME="Qwen/Qwen2.5-VL-7B-Instruct"
 export PYTHONPATH=src:$PYTHONPATH
 
 GLOBAL_BATCH_SIZE=128
-BATCH_PER_DEVICE=3          # 3 = 84GB per device (zero3, A100)
+BATCH_PER_DEVICE=3          # 3 = 85GB per device (zero3, A100)
 NUM_DEVICES=2               # Required 85GB GPU memory per device (zero3, A100)
 GRAD_ACCUM_STEPS=$((GLOBAL_BATCH_SIZE / (BATCH_PER_DEVICE * NUM_DEVICES)))
 
