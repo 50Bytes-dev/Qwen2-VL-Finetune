@@ -3,7 +3,7 @@
 export PYTHONPATH=src:$PYTHONPATH
 
 # Requirements:
-# 70GB VRAM
+# 80GB VRAM
 
 python src/awq_quantize.py \
     --model-path SoBytes/Sadovod-VL-7B \
