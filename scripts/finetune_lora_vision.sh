@@ -52,6 +52,6 @@ deepspeed src/training/train.py \
     --report_to tensorboard \
     --lazy_preprocess True \
     --save_strategy "steps" \
-    --save_steps 5 \
+    --save_steps 10 \
     --save_total_limit 10 \
     --dataloader_num_workers 4
