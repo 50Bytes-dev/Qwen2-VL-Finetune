@@ -2,7 +2,7 @@
 
 export PYTHONPATH=src:$PYTHONPATH
 
-python src/awq.py \
-    --model-path /root/Qwen2-VL-Finetune/output/qwen_2.5_merge \
+python src/awq_quantize.py \
+    --model-path SoBytes/Sadovod-VL-7B \
     --quant-path /root/Qwen2-VL-Finetune/output/qwen_2.5_awq \
-    --token my_hf_token
+    --token your_token_[optional]
