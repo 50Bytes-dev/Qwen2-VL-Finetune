@@ -2,6 +2,9 @@
 
 export PYTHONPATH=src:$PYTHONPATH
 
+# Requirements:
+# 70GB VRAM
+
 python src/awq_quantize.py \
     --model-path SoBytes/Sadovod-VL-7B \
     --quant-path /root/Qwen2-VL-Finetune/output/qwen_2.5_awq \
